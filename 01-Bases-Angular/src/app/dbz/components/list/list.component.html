@@ -1,0 +1,16 @@
+<h4>Listado</h4>
+<h3 *ngIf="characterList.length === 0">No hay personajes</h3>
+<ul class="list-group">
+    <li *ngFor="let c of characterList; 
+                let i = index;
+                let isFirst = first;
+                let isLast = last;" 
+        class="list-group-item"
+        [ngClass]="{
+            'list-group-item-success': isFirst,
+            'list-group-item-danger': isLast,
+        }">
+        {{i + 1}}. {{c.name}} - {{c.power}}
+        <button (click)="deleteCharacter(c.id!)" class="btn btn-danger ms-3">X</button>
+    </li>
+</ul>

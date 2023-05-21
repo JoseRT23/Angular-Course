@@ -1,0 +1,10 @@
+<h1>Personajes DBZ</h1>
+<hr>
+<div class="d-flex flex-wrap justify-content-around">
+    <div class="mt-3">
+        <app-form (onNewCharacter)="onNewCharacter($event)"></app-form>
+    </div>
+    <div class="mt-3">
+        <app-list [characterList]="characters" (onDeleteCharacter)="onDeleteCharacter($event)"></app-list>
+    </div>
+</div>
