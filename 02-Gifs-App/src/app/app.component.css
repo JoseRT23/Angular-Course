@@ -1,0 +1,10 @@
+.home {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width:1281px) {
+    .home {
+        display: flex;
+        flex-direction: row;
+    }
+}

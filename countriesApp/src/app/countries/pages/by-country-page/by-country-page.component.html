@@ -1,0 +1,6 @@
+<h2>Por país</h2>
+<shared-search-box 
+    placeholder="Buscar por país..."
+    [initialValue]="initialValue"
+    (onDebounce)="searchByCountry($event)"></shared-search-box>
+<countries-table [countries]="countries"></countries-table>

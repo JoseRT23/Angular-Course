@@ -1,0 +1,31 @@
+<ng-template #loader>
+    <div class="alert alert-info">
+        Espere por favor...
+    </div>
+</ng-template>
+
+<div *ngIf="country; else loader">
+    <h2>País: {{ country.name.common }}</h2>
+    <h3>Bandera</h3>
+    <img class="img-thumbnail"
+         style="width: 500px;" 
+         [src]="country.flags.svg" 
+         [alt]="country.name.common">
+    <ul>
+        <h3>Información</h3>
+        <li class="list-group-item">
+            Población: {{country.population | number}}
+        </li>
+        <li class="list-group-item">
+            Codigo: {{country.cca3}}
+        </li>
+    </ul>
+    <div>
+        <h3>Traducciones</h3>
+        <span class="badge bg-primary m1-1">{{country.translations['ara'].common}}</span>
+        <span class="badge bg-primary m1-1">{{country.translations['bre'].common}}</span>
+        <span class="badge bg-primary m1-1">{{country.translations['ces'].common}}</span>
+        <span class="badge bg-primary m1-1">{{country.translations['cym'].common}}</span>
+        <span class="badge bg-primary m1-1">{{country.translations['deu'].common}}</span>
+    </div>
+</div>
