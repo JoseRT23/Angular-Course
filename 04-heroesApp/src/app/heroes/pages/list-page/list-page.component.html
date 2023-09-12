@@ -1,0 +1,8 @@
+<h1>Listado de heroes</h1>
+<mat-divider></mat-divider>
+<div>
+    <div *ngFor="let hero of heroes">
+        <heroes-hero-card [hero]="hero"></heroes-hero-card>
+    </div>
+</div>
+
