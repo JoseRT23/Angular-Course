@@ -1,1 +1,17 @@
-<p>hero-page works!</p>
+<ng-template #divLoading>
+    <mat-grid-list cols="1">
+        <mat-grid-tile>
+            <mat-spinner></mat-spinner>
+        </mat-grid-tile>
+    </mat-grid-list>
+</ng-template>
+
+<div *ngIf="hero; else divLoading" class="grid">
+    <p>Heroe: {{hero.superhero}}</p>
+    <p>Otro nombre: {{hero.alter_ego}}</p>
+    <p>Editorial: {{hero.publisher}}</p>
+
+    <img style="width: 200px;" [src]="hero | heroImage" [alt]="hero.superhero">
+
+<button mat-button color="warn" (click)="goBack()" >Regresar</button>
+</div>
